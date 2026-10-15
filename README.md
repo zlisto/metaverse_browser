@@ -2,7 +2,7 @@
 
 **Try it:** https://zlisto.github.io/metaverse_browser/
 
-The "me" browser for the Metaverse Web. It shows one world at a time, carries your name between worlds, keeps Back and Forward history, and follows the portals you walk through. It speaks `mvw/0.1`; the spec is in `../PROTOCOL.md`.
+The "me" browser for the Metaverse Web. It shows one world at a time, carries your name between worlds, keeps Back and Forward history, and follows the portals you walk through. It speaks `mvw/0.1`; the spec is in `https://github.com/zlisto/metaverse_web/blob/main/PROTOCOL.md`.
 
 ## Run everything locally
 
@@ -26,4 +26,4 @@ Then open http://localhost:5175. Run `npm install` in each folder first if you h
 
 ## Adding a friend's world
 
-Their world needs a manifest at `/.well-known/metaverse.json`, spawn points chosen with `?spawn=`, and the `mvw.js` client (copy it from `../darul_kebab/src/mvw.js`). Then type its address here, add it to `BOOKMARKS` in `src/App.jsx`, or put a portal to it in one of your worlds. To show its name and portals in the info panel, their server has to allow cross-origin requests for the manifest file.
+Their world needs a manifest at `/.well-known/metaverse.json`, spawn points chosen with `?spawn=`, and the `mvw.js` client (copy it from `https://github.com/zlisto/darul_kebab/blob/main/src/mvw.js`). Then type its address here, add it to `BOOKMARKS` in `src/App.jsx`, or put a portal to it in one of your worlds. To show its name and portals in the info panel, their server has to allow cross-origin requests for the manifest file.

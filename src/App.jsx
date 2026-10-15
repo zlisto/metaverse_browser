@@ -10,7 +10,7 @@ const LIVE = !import.meta.env.DEV
 const BOOKMARKS = [
   { label: 'Yale SOM', href: LIVE ? 'https://zlisto.github.io/yale_som_virtual/' : 'http://localhost:5173/', spawn: null },
   { label: 'Darul Kebab', href: LIVE ? 'https://zlisto.github.io/darul_kebab/' : 'http://localhost:5174/', spawn: null },
-  ...(LIVE ? [] : [{ label: 'Metaverse Square', href: 'http://localhost:5178/', spawn: null }]), // not online yet
+  { label: 'Metaverse Square', href: LIVE ? 'https://zlisto.github.io/hub_world/' : 'http://localhost:5178/', spawn: null },
 ]
 const COLORS = ['#ff4fa3', '#4fc8f0', '#ffb703', '#06d6a0', '#b388ff']
 
