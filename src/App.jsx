@@ -66,9 +66,11 @@ export default function App() {
   state.current = { hist, me }
 
   // go somewhere: fade out, then swap the world. `back` rewrites the current entry's spawn
-  // so Back returns you next to the portal you took.
-  const go = useCallback((next, { back, move } = {}) => {
-    whoosh()
+  // so Back returns you next to the portal you took. On a portal trip the world plays the whoosh
+  // itself (it has your clicks, so its audio is allowed), so the browser only whooshes for its
+  // own buttons and address bar, and waits a little longer so the world's whoosh isn't cut off.
+  const go = useCallback((next, { back, move, portal } = {}) => {
+    if (!portal) whoosh()
     setFading(true)
     setTimeout(() => {
       setHist(({ stack, i }) => {
@@ -78,7 +80,7 @@ export default function App() {
         return { stack: [...s, next], i: i + 1 }
       })
       setWhere('')
-    }, 280)
+    }, portal ? 450 : 280)
   }, [])
 
   // remember where we are in the browser's own URL, so a reload keeps you in the same world
@@ -113,7 +115,7 @@ export default function App() {
         try {
           const next = parseAddress(m.href)
           if (m.spawn) next.spawn = String(m.spawn)
-          go(next, { back: m.back ? String(m.back) : undefined })
+          go(next, { back: m.back ? String(m.back) : undefined, portal: true })
         } catch {
           // ignore portals to things that aren't web addresses
         }
