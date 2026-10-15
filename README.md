@@ -9,7 +9,6 @@ The "me" browser for the Metaverse Web. It shows one world at a time, carries yo
 Start the two worlds and the browser, each in its own terminal:
 
 ```bash
-npm --prefix yale_som_virtual run dev
 npm --prefix darul_kebab run dev
 npm --prefix metaverse_browser run dev
 ```

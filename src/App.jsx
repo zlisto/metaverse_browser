@@ -8,7 +8,7 @@ const PROTOCOL = 'mvw/0.1'
 // the local copies while developing, the live worlds once deployed
 const LIVE = !import.meta.env.DEV
 const BOOKMARKS = [
-  { label: 'Yale SOM', href: LIVE ? 'https://zlisto.github.io/yale_som_virtual/' : 'http://localhost:5173/', spawn: null },
+  { label: 'Yale SOM', href: 'https://zlisto.github.io/evans-hall-3d/', spawn: null }, // live in both: it isn't in this folder
   { label: 'Darul Kebab', href: LIVE ? 'https://zlisto.github.io/darul_kebab/' : 'http://localhost:5174/', spawn: null },
   { label: 'Metaverse Square', href: LIVE ? 'https://zlisto.github.io/hub_world/' : 'http://localhost:5178/', spawn: null },
 ]
